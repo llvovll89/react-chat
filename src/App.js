@@ -26,7 +26,7 @@ const App = () => {
 
   return (
     <>
-      <Router>
+      <Router basename="react-chat">
         <div className="wrap">
           <Routes>
             {/* Route 6버전 부터 index기능 가능 */}
