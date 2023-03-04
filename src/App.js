@@ -1,25 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Home from './pages/Home';
+import Signup from './pages/login/Signup';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from 'react-router-dom';
+import Login from './pages/login/Login';
+import { useContext } from 'react';
+import { ResisterContext } from './context/ResisterContext';
+import 'bootstrap/dist/css/bootstrap.css';
 
-function App() {
+const App = () => {
+  const { currentUser } = useContext(ResisterContext);
+
+  // 사용자 인증 완료시 홈페이지 보이기
+  const ProtectRoute = ({ children }) => {
+    if (!currentUser) {
+      return <Navigate to="/login" />;
+    }
+
+    return children;
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <div className="wrap">
+          <Routes>
+            {/* Route 6버전 부터 index기능 가능 */}
+            <Route path="/">
+              <Route
+                index
+                element={
+                  <ProtectRoute>
+                    <Home />
+                  </ProtectRoute>
+                }
+              />
+              <Route path="login" element={<Login />} />
+              <Route path="resister" element={<Signup />} />
+            </Route>
+          </Routes>
+        </div>
+      </Router>
+    </>
   );
-}
+};
 
 export default App;

@@ -1,0 +1,207 @@
+/* login */
+.login_wrap {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login_container {
+    max-width: 95%;
+    width: 440px;
+    gap: 1rem;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin: auto;
+    padding: 1rem;
+    border: 1px solid #eee;
+    border-radius: 6px;
+}
+
+.login_logo {
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.login_logo span {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 36px;
+}
+
+.login_logo span:nth-child(1) {
+    font-size: 42px;
+    color: #4285f4;
+}
+
+.login_logo span:nth-child(2),
+.login_logo span:nth-child(6) {
+    color: #ea4335;
+}
+
+.login_logo span:nth-child(3) {
+    color: #fbbc05;
+}
+
+.login_logo span:nth-child(4) {
+    color: #4285f4;
+}
+
+.login_logo span:nth-child(5) {
+    color: #34a853;
+}
+
+.login_container .login_title {
+    text-align: center;
+    padding-top: 12px;
+}
+
+.login_container .login_title span {
+    display: inline-block;
+    line-height: 1.5;
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.login_container form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.25rem;
+}
+
+.login_container input[type="email"],
+.login_container input[type="password"],
+.login_container button {
+    width: 100%;
+    padding: 12px 20px;
+    height: 56px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    transition: 0.15s linear;
+}
+
+.login_container input:focus {
+    border: 1px solid #07f;
+}
+
+.login_container form button {
+    background: #1a73e8;
+    color: #FFF;
+    margin-top: 30px;
+    transition: 0.25s ease-in;
+    border: none;
+}
+
+.login_container form button:hover {
+    border: none;
+    box-shadow: 4px 4px 10px skyblue;
+}
+
+.login_container .signup_text a {
+    display: block;
+    font-size: 0.9rem;
+    color: #07f;
+    text-align: center;
+    transition: 0.2s ease;
+    padding: 0.5rem;
+    border-radius: 6px;
+} 
+
+.login_container .signup_text a:hover {
+    background: rgba(0, 0, 0, 5%);
+}
+
+/* signup */
+.signup_container {
+    margin: auto;
+    padding-top: 60px;
+    max-width: 560px;
+    height: max-content;
+}
+
+.form_wrap {
+    display: flex;
+    flex-flow: column;
+}
+
+.signup_container .logo, .title {
+    display: inline-block;
+    width: 100%;
+    line-height: 1.5;
+    padding: 12px;
+}
+
+.signup_container .logo {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.signup_container .title {
+    font-size: 1.4rem;
+}
+
+.signup_container form {
+    padding-top: 60px;
+    display: block;
+}
+
+.signup_container form label {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 56px;
+}
+
+.signup_container form label img {
+    width: 35px;
+    height: 35px;
+}
+
+.signup_container form label span {
+    display: inline-block;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.signup_container input[type="text"],
+.signup_container input[type="email"],
+.signup_container input[type="password"],
+.signup_container .signup_btn {
+    margin-bottom: 14px;
+    width: 100%;
+    height: 56px;
+    padding: 18px 16px;
+    /* background-color: #fff; */
+    font-size: 15px;
+    font-weight: 500;
+    transition: border-color .15s linear;
+    border: 1px solid #e5e8eb;
+}
+
+.signup_container .signup_btn {
+    background: #000;
+    color: #FFF;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.12rem;
+    height: 72px;
+    transition: 0.3s background-color linear;
+}
+
+.signup_container input:focus {
+    border: 2px solid #07f;
+}
+
+.signup_container .signup_btn:hover,
+.signup_container button:focus {
+    background: #07f;
+    transition: 0.3s background-color linear;
+}
+
+.login_click {
+    color: #07f;
+}
