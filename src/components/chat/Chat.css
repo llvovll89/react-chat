@@ -128,7 +128,7 @@
     padding: 8px 12px;
     border: 1px solid #ccc;
     color: #FFF;
-    letter-spacing: 0.07srem;
+    letter-spacing: 0.07rem;
     border-radius: 6px;
 }
 
@@ -160,12 +160,11 @@
     padding: 10px 16px;
     border: 1px solid #CCC;
     border-radius: 6px;
+    transition: 0.2s all linear;
 }
 
 .submit button:hover {
     background: transparent;
-    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.29);
-    border: 0;
 }
 
 .submit label {

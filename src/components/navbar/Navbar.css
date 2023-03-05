@@ -11,10 +11,35 @@
     transition: 0.15s all linear;
 }
 
-.logo {
+.nav_logo {
     display: block;
-    padding: 0.2rem 0.6rem;
-    font-size: 1rem;
+}
+
+.nav_logo span {
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: 0.125rem;
+}
+
+.nav_logo span:nth-child(1) {
+    color: #4285f4;
+}
+
+.nav_logo span:nth-child(2),
+.nav_logo span:nth-child(6) {
+    color: #ea4335;
+}
+
+.nav_logo span:nth-child(3){
+    color: #fbbc05;
+}
+
+.nav_logo span:nth-child(4) {
+    color: #4285f4;
+}
+
+.nav_logo span:nth-child(5) {
+    color: #34a853;
 }
 
 .info {

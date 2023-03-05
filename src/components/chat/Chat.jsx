@@ -26,7 +26,7 @@ const Chat = () => {
 
   return (
     <div className={modalOn ? "chat mobile" : "chat" }>
-    <div className="chat_header" style={{ background : dark ? "#181818" : "#ffff" , color: dark? "#fff" : "#181818"}}>
+    <div className="chat_header" style={{transition: "0.2s linear" , background : dark ? "#181818" : "#ffff" , color: dark? "#fff" : "#181818"}}>
   {/* 아래 하단 span태그는 채팅창 - 채팅리스트 클릭(사람이름) */ }
     <span className='user_name'>{data.user.displayName}</span>
     <div className="chat_header_icons">

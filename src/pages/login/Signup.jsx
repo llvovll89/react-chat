@@ -15,22 +15,40 @@ import './Resister.css';
 const Form = styled.form`
 display: block;
 padding-top: 60px;
+.area {
+  width: 100%;
+  position: relative;
+}
     .signup_input {
     margin-bottom: 14px;
     width: 100%;
     height: 56px;
-    padding: 18px 16px;
-    background-color: #fff;
-    font-size: 16px;
+    padding: 20px 10px 10px;
+    background-color: transparent;
+    font-size: 15px;
     font-weight: 500;
-    transition: border-color .15s linear;
-    border: 1px solid #e5e8eb;
+    border: none;
+    border-bottom: 1px solid #999;
     font-family: 'Chosunilbo_myungjo';
 }
     .signup_input:active,
     .signup_input:focus {
-        border: 2px solid #07f;
+      border-bottom: 2px solid #07f;
     }
+    .la {
+      position: absolute;
+      left: 10px;
+      top: 15px;
+      font-size: 15px;
+      transition: top .5s ease;
+      color: #999;
+    }
+    .signup_input:focus + .la  {
+      top: 0;
+      font-size: 13px;
+      color: #166cea;
+    }
+
     .signup_btn {
     width: 100%;
     height: 60px;
@@ -114,6 +132,7 @@ const Signup = () => {
 
   return (
     <>
+    <div className="wrap">
       <div className="signup_container">
         <Container>
              <div className='signup_logo'>
@@ -126,11 +145,20 @@ const Signup = () => {
              </div>
             <span className='title'>회원가입</span>
             <Form onSubmit={handleSubmit} >
-              <input className='signup_input'  onChange={(e) => setDisplayName(e.target.value)} type="text" placeholder='Username' />
-              <input className='signup_input'  onChange={(e) => setEmail(e.target.value)} type="email" placeholder='Your E-mail' />
-              <input className='signup_input'  onChange={(e) => setPassword(e.target.value)} type="password" placeholder='Your Password' />
+            <div className="area">
+              <input className='signup_input' id="na" onChange={(e) => setDisplayName(e.target.value)} type="text" required />
+              <label className='la' htmlFor="na">Username</label>
+              </div>
+              <div className="area">
+              <input className='signup_input' id="em" onChange={(e) => setEmail(e.target.value)} type="email" required />
+              <label className='la' htmlFor="em">Signup - Email</label>
+              </div>
+              <div className="area">
+              <input className='signup_input' id="ps" onChange={(e) => setPassword(e.target.value)} type="password" required />
+              <label className='la'  htmlFor="ps">Password</label>
+              </div>
               <input type="file" style={{display: "none"}} id='file'/>
-              <label htmlFor="file">
+              <label htmlFor="file" className='file_label'>
               <img src={Add} alt="..add img" />
                <span>당신의 이미지를 넣어주세요</span>
               </label>
@@ -139,6 +167,7 @@ const Signup = () => {
               </Form>
               <p className='signup_bt'>계정이 있을 시 <Link to="/login" className='login_click'>Log-in</Link></p>
         </Container>
+      </div>
       </div>
     </>
   )

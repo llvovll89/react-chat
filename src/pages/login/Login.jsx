@@ -8,21 +8,38 @@ import './Resister.css';
 const Form = styled.form`
 display: block;
 padding-top: 60px;
+.area {
+  width: 100%;
+  position: relative;
+}
     .login_input {
     margin-bottom: 14px;
     width: 100%;
     height: 56px;
-    padding: 18px 16px;
-    background-color: #fff;
-    font-size: 16px;
+    padding: 20px 10px 10px;
+    background-color: transparent;
+    font-size: 15px;
     font-weight: 500;
-    transition: border-color .15s linear;
-    border: 1px solid #e5e8eb;
+    border: none;
+    border-bottom: 1px solid #999;
     font-family: 'Chosunilbo_myungjo';
 }
     .login_input:active,
     .login_input:focus {
-        border: 2px solid #07f;
+        border-bottom: 2px solid #07f;
+    }
+    label {
+      position: absolute;
+      left: 10px;
+      top: 15px;
+      font-size: 15px;
+      transition: top .5s ease;
+      color: #999;
+    }
+    .login_input:focus + label  {
+      top: 0;
+      font-size: 13px;
+      color: #166cea;
     }
     .login_btn {
     width: 100%;
@@ -77,15 +94,16 @@ const Login = () => {
   tapBtn.forEach((btns) => {
       btns.addEventListener('click', () => {
           tapBtn.forEach((list) => {
-              list.classList.remove('taps')
+              list.classList.remove('tabs')
           })
-          btns.classList.add('taps')
+          btns.classList.add('tabs')
       })
   })
 
 
   return (
     <>
+    <div className="wrap">
     <div className="login">
       <Container>
       <div className="login_header">
@@ -106,8 +124,14 @@ const Login = () => {
           </div>
           </div>
           <Form onSubmit={handleSubmit}>
-          <input className='login_input' type="email" placeholder='login-email' onChange={(e) => setEmail(e.target.value)} />
-          <input className='login_input' type="password" placeholder='password' onChange={(e) => setPassword(e.target.value)}  />
+          <div className="area">
+          <input className='login_input' id="em" type="email"  onChange={(e) => setEmail(e.target.value)} required />
+          <label for="em">User Email</label>
+          </div>
+          <div className="area">
+          <input className='login_input' id="ps" type="password" onChange={(e) => setPassword(e.target.value)} required  />
+          <label for="ps">User Password</label>
+          </div>
           {errorMSg?.msg && (<Alert variant={errorMSg?.err ? "danger" : "success"}>{errorMSg?.msg}</Alert>)}
           <button type="submit" className="login_btn">Hoggle 로그인</button>
           </Form>
@@ -116,6 +140,7 @@ const Login = () => {
               <Link to="/resister">계정 만들기</Link>
           </div>
       </Container>
+      </div>
       </div>
     </>
   )

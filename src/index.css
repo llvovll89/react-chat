@@ -40,18 +40,17 @@ input {
   outline: none;
   border: 0;
   background-color: transparent;
-  transition: 0.3s all linear;
 }
 
 /* global css */
 .home_container {
-  /* position: relative; */
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   font-family: var(--popFont);
+  transition: 0.2s all linear;
 }
 
 .content {

@@ -78,7 +78,7 @@ const ChatInput = () => {
 
   return (
     <>
-<div className='chat_bottom' style={{background : dark ? "#181818" : "#ffff" , color: dark? "#fff" : "#181818"}}>
+<div className='chat_bottom' style={{transition: "0.2s linear" , background : dark ? "#181818" : "#ffff" , color: dark? "#fff" : "#181818"}}>
     <input type="text" placeholder='입력해주세연..' value={text} className='chat_input' onChange={e => setText(e.target.value)} style={{color: dark? "#fff" : "#181818"}} />
     <div className="submit">
     <div className="submit_left">
@@ -88,7 +88,7 @@ const ChatInput = () => {
       <span><AiOutlineFileAdd /></span>
       </label>
       </div>
-      <button type='submit' onClick={handleSubmit}>SEND</button>
+      <button type='submit' style={{color: dark? "#fff" : "#181818"}} onClick={handleSubmit}>SEND</button>
     </div>
 </div>
     </>

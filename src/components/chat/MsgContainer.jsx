@@ -24,7 +24,7 @@ const MsgContainer = () => {
 
   return (
     <>
-        <div className='msg_content' style={{background: dark ? "#181818" : "rgb(223, 235, 240)"}}>
+        <div className='msg_content' style={{transition: "0.2s linear" , background: dark ? "#181818" : "rgb(223, 235, 240)"}}>
         {messages.map(msg => (
           <Msg message={msg} key={msg.id} />
         ))}

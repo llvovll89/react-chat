@@ -20,9 +20,14 @@ const Navbar = () => {
   return (
     <>
         <div className="nav_bar" >
-            <span className="logo">
-              GeonKaoTalk
-            </span>
+            <div className="nav_logo">
+            <span>H</span>
+            <span>O</span>
+            <span>O</span>
+            <span>G</span>
+            <span>L</span>
+            <span>E</span>
+            </div>
             <div className="info">
             <img src={currentUser?.photoURL} alt="" />
               <div className="user_form">
