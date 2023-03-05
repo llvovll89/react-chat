@@ -1,17 +1,16 @@
-import React , { useState }  from 'react'
+import React from 'react'
 import ChatList from './ChatList'
 import Navbar from '../navbar/Navbar'
 import Search from './Search'
-import './Side.css'
 import { useWrapContext } from '../../context/WrapContext'
+import './Side.css'
 
 const Sidebar = () => {
-  const [active, setActive] = useState(true);
-  const { dark , logModal } = useWrapContext();
+  const { dark } = useWrapContext();
 
   return (
     <>
-      <div className={active ? "sidebar" : "mobile-sidebar"} 
+      <div className="sidebar" 
         style={{background: dark ? "#181818" : "#ffffff" }}
       >
         <Navbar />

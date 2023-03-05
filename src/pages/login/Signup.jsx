@@ -1,15 +1,50 @@
 import React , { useState } from 'react'
 import { useWrapContext } from '../../context/WrapContext';
-import { Alert } from 'react-bootstrap';
+import { Alert , Container} from 'react-bootstrap';
 import { updateProfile } from 'firebase/auth';
 import { uploadBytesResumable , getDownloadURL, ref} from 'firebase/storage';
 import { db , storage } from '../../firebase';
 import { doc, setDoc } from 'firebase/firestore'
 import {Link , useNavigate} from 'react-router-dom';
+import styled from 'styled-components';
 
 // input[type="file"] 에 보여질 img 
 import Add from '../../assets/images/cursor.png';
 import './Resister.css';
+
+const Form = styled.form`
+display: block;
+padding-top: 60px;
+    .signup_input {
+    margin-bottom: 14px;
+    width: 100%;
+    height: 56px;
+    padding: 18px 16px;
+    background-color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    transition: border-color .15s linear;
+    border: 1px solid #e5e8eb;
+    font-family: 'Chosunilbo_myungjo';
+}
+    .signup_input:active,
+    .signup_input:focus {
+        border: 2px solid #07f;
+    }
+    .signup_btn {
+    width: 100%;
+    height: 60px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #4A8BFD;
+    transition: all .15s linear;
+    }
+    .signup_btn:hover,
+    .signup_btn:active {
+    background-color: #07f;
+    transition: all .2s linear;
+    }
+`
 
 
 const Signup = () => {
@@ -80,23 +115,30 @@ const Signup = () => {
   return (
     <>
       <div className="signup_container">
-        <div className="form_wrap">
-             <span className='logo'>Hokaotalk</span>
-            <span className='title'>Register</span>
-            <form onSubmit={handleSubmit} >
-              <input onChange={(e) => setDisplayName(e.target.value)} type="text" placeholder='Username' />
-              <input onChange={(e) => setEmail(e.target.value)} type="email" placeholder='Your E-mail' />
-              <input onChange={(e) => setPassword(e.target.value)} type="password" placeholder='Your Password' />
+        <Container>
+             <div className='signup_logo'>
+             <span>H</span>
+             <span>O</span>
+             <span>O</span>
+             <span>G</span>
+             <span>L</span>
+             <span>E</span>
+             </div>
+            <span className='title'>회원가입</span>
+            <Form onSubmit={handleSubmit} >
+              <input className='signup_input'  onChange={(e) => setDisplayName(e.target.value)} type="text" placeholder='Username' />
+              <input className='signup_input'  onChange={(e) => setEmail(e.target.value)} type="email" placeholder='Your E-mail' />
+              <input className='signup_input'  onChange={(e) => setPassword(e.target.value)} type="password" placeholder='Your Password' />
               <input type="file" style={{display: "none"}} id='file'/>
               <label htmlFor="file">
               <img src={Add} alt="..add img" />
-               <span>Add an avatar</span>
+               <span>당신의 이미지를 넣어주세요</span>
               </label>
               <button type="submit" className='signup_btn'>회원가입</button>
               {errorMSg?.msg && (<Alert variant={errorMSg?.err ? "danger" : "success"}>{errorMSg?.msg}</Alert>)}
-              </form>
-              <p>계정이 있을 시 <Link to="/login" className='login_click'>Log-in</Link></p>
-        </div>
+              </Form>
+              <p className='signup_bt'>계정이 있을 시 <Link to="/login" className='login_click'>Log-in</Link></p>
+        </Container>
       </div>
     </>
   )

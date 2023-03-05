@@ -45,7 +45,7 @@ const ChatList = () => {
         <img src={chat[1].userInfo.photoURL} alt="" />
         <div className="list_chat">
             <span>{chat[1].userInfo.displayName}</span>
-                <p className='list_check_user'>{chat[1].lastMessage.text.length > 30 ? chat[1].lastMessage.text.substr(0, 30) + '...' : chat[1].lastMessage.text}</p>
+                <p className='list_check_user'>{chat[1].lastMessage?.text.length > 50 ? chat[1].lastMessage?.text.substr(0, 49) + "..." : chat[1].lastMessage?.text}</p>
             </div>
             </div>
       ))}

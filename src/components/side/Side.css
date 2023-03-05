@@ -83,4 +83,7 @@
         overflow: auto;
         height: calc(100% - 128px);
     }
+    .list_chat {
+        padding-left: 20px;
+    }
 }
