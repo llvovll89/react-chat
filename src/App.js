@@ -27,7 +27,6 @@ const App = () => {
   return (
     <>
       <Router basename="react-chat">
-        <div className="wrap">
           <Routes>
             {/* Route 6버전 부터 index기능 가능 */}
             <Route path="/">
@@ -43,7 +42,6 @@ const App = () => {
               <Route path="resister" element={<Signup />} />
             </Route>
           </Routes>
-        </div>
       </Router>
     </>
   );

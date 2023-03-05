@@ -7,12 +7,12 @@ import { useWrapContext } from '../../context/WrapContext'
 
 const Sidebar = () => {
   const [active, setActive] = useState(true);
-  const { dark } = useWrapContext();
+  const { dark , logModal } = useWrapContext();
 
   return (
     <>
       <div className={active ? "sidebar" : "mobile-sidebar"} 
-        style={{background: dark? "#181818" : "#ffffff"}}
+        style={{background: dark ? "#181818" : "#ffffff" }}
       >
         <Navbar />
         <Search />

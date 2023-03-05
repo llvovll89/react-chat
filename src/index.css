@@ -34,10 +34,6 @@ a {
   text-decoration: none;
 }
 
-body {
-  font-family: var(--mainFont);
-}
-
 button,
 input {
   cursor: pointer;
@@ -49,16 +45,20 @@ input {
 
 /* global css */
 .home_container {
+  /* position: relative; */
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  font-family: var(--popFont);
 }
 
 .content {
-  width: 90%;
+  max-width: 95%;
+  width: 100%;
   height: 85%;
-  display: flex;
+  display: block;
   overflow: hidden;
   border-radius: 12px;
   border: 1px solid #FFFFFF;
@@ -68,16 +68,7 @@ input {
 /* media query */
 @media screen and (max-width: 1024px) {
   .content {
-    max-width: 90%;
-    border: 2px solid #000;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .content {
     max-width: 95%;
-    border: 2px solid yellow;
+    width: 100%;
   }
 }
-
-@media screen and (max-width: 564px) {}

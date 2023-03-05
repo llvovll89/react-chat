@@ -9,16 +9,21 @@ import { arrayUnion, doc, serverTimestamp, Timestamp, updateDoc } from 'firebase
 import { v4 as uuid } from 'uuid';
 import { db, storage } from '../../firebase';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
+import { useWrapContext } from '../../context/WrapContext';
 
 const ChatInput = () => {
-  const [text, setText] = useState("")
+  const [text, setText] = useState("방구뿡")
   const [img, setImg] = useState(null);
-
+  const { dark } = useWrapContext();
   const { currentUser } = useContext(ResisterContext)
   const { data } = useContext(ChatContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if(text === "") {
+      alert('입력하고 보내세요')
+    }
     
     if(img) {
       const storageRef = ref(storage, uuid());
@@ -73,8 +78,8 @@ const ChatInput = () => {
 
   return (
     <>
-<div className='chat_bottom'>
-    <input type="text" placeholder='입력해주세연..' value={text} className='chat_input' onChange={e => setText(e.target.value)} />
+<div className='chat_bottom' style={{background : dark ? "#181818" : "#ffff" , color: dark? "#fff" : "#181818"}}>
+    <input type="text" placeholder='입력해주세연..' value={text} className='chat_input' onChange={e => setText(e.target.value)} style={{color: dark? "#fff" : "#181818"}} />
     <div className="submit">
     <div className="submit_left">
     <span><RiBarChartBoxLine /></span>

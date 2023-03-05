@@ -1,16 +1,19 @@
 /* sidebar */
 .sidebar {
-    position: relative;
-    flex: 1;
+    /* position: absolute;   */
     transition: 0.25s all linear;
-    border-right: 1px solid #ccc;
     overflow: hidden;
+    margin: auto;
+    max-width: 564px;
+    width: 100%;
+    height: 100%;
     border: 1px solid #eee;
+    position: relative;
 }
 
 /* Search */
 .search_container {
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.24);
     overflow: hidden;
 }
 
@@ -46,6 +49,7 @@
     padding: 6px 10px;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .user_list img {
@@ -54,6 +58,11 @@
     border-radius: 50%;
     object-fit: cover;
     background: #FFF;
+}
+
+.chat_list {
+    overflow: auto;
+    height: calc(100% - 138px);
 }
 
 .list_chat {
@@ -69,6 +78,9 @@
     margin-bottom: 0;
 }
 
-/* @media screen and (max-width: 564px) {
-    .sidebar
-} */
+@media screen and (max-width: 564px) {
+    .chat_list {
+        overflow: auto;
+        height: calc(100% - 128px);
+    }
+}
