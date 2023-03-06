@@ -138,10 +138,10 @@ const Signup = () => {
              <div className='signup_logo'>
              <span>H</span>
              <span>O</span>
-             <span>O</span>
-             <span>G</span>
+             <span>T</span>
+             <span>A</span>
              <span>L</span>
-             <span>E</span>
+             <span>K</span>
              </div>
             <span className='title'>회원가입</span>
             <Form onSubmit={handleSubmit} >

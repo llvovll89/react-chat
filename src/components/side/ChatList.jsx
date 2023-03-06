@@ -37,7 +37,7 @@ const ChatList = () => {
 
   return (
     <>
-    <div className="chat_list" style={{ background: !logModal ? "#FFF" : "#B2B2B2"}}>
+    <div className="chat_list" style={{ background: !logModal ? "#FFF" : "#333" , color: !logModal ? "#000" : "#FFF"}}>
       {Object.entries(chatList)?.sort((a,b) => b[1].date - a[1].date).map((chat) => (
         <div className="user_list"  
         style={{boxShadow : dark ? "1px 1px 2px rgba(255,255,255,0.12)" : "1px 1px 2px rgba(0,0,0,0.12)"}}

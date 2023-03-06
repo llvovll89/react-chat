@@ -68,9 +68,9 @@
     width: 105px;
     height: 34px;
     padding-bottom: 1px;
-    color: #9fa1a7;
+    color: #afb1b8;
     text-align: center;
-    border-bottom: 1px solid #e5e8eb;
+    border-bottom: 1px solid #d5e5f5;
     transition: all .15s linear;
     font-family: var(--popFont);
 }

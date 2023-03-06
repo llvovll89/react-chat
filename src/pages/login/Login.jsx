@@ -110,10 +110,10 @@ const Login = () => {
           <div className="login_logo">
               <span>H</span>
               <span>O</span>
-              <span>O</span>
-              <span>G</span>
+              <span>T</span>
+              <span>A</span>
               <span>L</span>
-              <span>E</span>
+              <span>K</span>
           </div>
           <div className="login_tab">
             <ul>
@@ -133,7 +133,7 @@ const Login = () => {
           <label for="ps">User Password</label>
           </div>
           {errorMSg?.msg && (<Alert variant={errorMSg?.err ? "danger" : "success"}>{errorMSg?.msg}</Alert>)}
-          <button type="submit" className="login_btn">Hoggle 로그인</button>
+          <button type="submit" className="login_btn">HOTALK 로그인</button>
           </Form>
 
           <div className="signup_text">
