@@ -1,92 +1,58 @@
 .nav_bar {
-    display: flex;
-    align-items: center;
     height: 82px;
-    background: #333;
+    background: #181818;
     padding: 12px;
-    justify-content: space-between;
-    transition: 0.25s all linear;
-    color: #FFEFFF;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.24);
     transition: 0.15s all linear;
+    color: #FFEFFF;
 }
 
-.nav_logo {
-    display: block;
+.user_form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 6px;
 }
 
-.nav_logo span {
-    font-weight: 700;
-    font-size: 22px;
-    letter-spacing: 0.125rem;
-}
-
-.nav_logo span:nth-child(1) {
-    color: #4285f4;
-}
-
-.nav_logo span:nth-child(2),
-.nav_logo span:nth-child(6) {
-    color: #ea4335;
-}
-
-.nav_logo span:nth-child(3){
-    color: #fbbc05;
-}
-
-.nav_logo span:nth-child(4) {
-    color: #4285f4;
-}
-
-.nav_logo span:nth-child(5) {
-    color: #34a853;
-}
-
-.info {
+.user_form .user {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 12px;
 }
 
-.info img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: #fff;
-    /* object-fit: cover; */
+.user img {
+    width: 55px;
+    height: 55px;
+    border-radius: 40%;
+    object-fit: cover;
 }
 
-.info .user_form {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    font-weight: 500;
-}
-
-.info .name {
-    padding: 0.22rem;
-    font-size: 0.95rem;
-    display: inline-block;
+.name {
+    margin-bottom: 0;
+    font-size: clamp(15px, 2vw, 17px);
+    color: #FEFEFE;
     border-radius: 6px;
+    letter-spacing: 0.035rem;
+}
+
+.user span {
+    font-size: clamp(14px, 1.8vw, 15px);
+    letter-spacing: 0.025rem;
     font-family: var(--korFont);
 }
 
-.info .signOut {
-    background: #030303;
+.signOut {
+    color: #FEFEFE;
+    letter-spacing: 0.045rem;
+    font-size: clamp(14px, 2vw, 15px);
+    padding: 9px 18px;
+    transition: all 0.15s linear;
     border-radius: 6px;
-    color: #fff;
-    font-size: 0.65rem;
-    padding: 6px 12px;
-    font-weight: 600;
-    letter-spacing: 0.07rem;
-    transition: 0.25s all linear;
 }
 
-.info .signOut:hover {
-    background: transparent;
-    color: #181818;
+.signOut:hover {
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.24);
+    background: #FEFEFE;
+    color: #181818;
 }
 
 
@@ -102,11 +68,11 @@
 .signout_modal.logOut_Modal {
     top: 50%;
     left: 50%;
-    width: 90%;  
+    width: 90%;
     transform: translate(-50%, -50%);
     background: transparent;
     background: #ffffff;
-    box-shadow: 4px 4px 6px 1px rgba(0,0,0,.3); 
+    box-shadow: 4px 4px 6px 1px rgba(0, 0, 0, .3);
     border-radius: 3px;
     overflow: hidden;
 }
@@ -119,15 +85,16 @@
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
     width: 100%;
-    display:flex; 
-    align-items:center;
+    display: flex;
+    align-items: center;
     flex-direction: column;
-    justify-content:center;
+    justify-content: center;
     gap: 0.5rem;
     letter-spacing: 0.12rem;
     padding: 3rem 0;
 }
-.modal_top h1 ,
+
+.modal_top h1,
 .modal_top span {
     font-size: 2rem;
     color: #ea4335;
@@ -137,6 +104,7 @@
 .modal_top h1 {
     font-size: 1.5rem;
 }
+
 .signout_modal .boxs {
     width: 100%;
     padding: 1.2rem 0.75rem;
@@ -159,7 +127,7 @@
     color: #807e7e;
 }
 
-.modal_center ,
+.modal_center,
 .signout_modal .boxs {
     background: #F9F9FB;
 }
@@ -194,77 +162,13 @@
 }
 
 
-@media screen and (max-width: 768px) {
-    .info {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
-    }
-    
-    .info .name {
-        font-size: 1.15rem;
-        display: inline-block;
-    }
-}
-
 @media screen and (max-width: 564px) {
     .nav_bar {
-        display: flex;
-        align-items: center;
-        height: 72px;
-        background: #333;
-        padding: 12px;
-        justify-content: space-between;
-        transition: 0.25s all linear;
-        color: #FFEFFF;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.24);
-    }
-    
-    .logo {
-        display: block;
-        padding: 0.2rem 0.6rem;
-        font-size: 1rem;
-    }
-    
-    .info {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
+        height: 76px;
+        padding: 8px;
     }
 
-    .info .user_form {
-        flex-direction: column;
-        gap: 0.2rem;
-    }
-    
-    .info img {
-        width: 45px;
-        height: 45px;
-        object-fit: cover;
-    }
-    
-    .info .name {
-        width: 100%;
-        font-size: 0.8rem;
-        display: inline-flex;
-        justify-content: center;
-        background: rgba(0, 0, 0, 0.24);
-    }
-    
-    .info .signOut {
-        background: #030303;
-        border-radius: 6px;
-        color: #fff;
-        font-size: 0.65rem;
-        padding: 6px 12px;
-        font-weight: 600;
-        letter-spacing: 0.07rem;
-        transition: 0.25s all linear;
-    }
-
-/* 로그아웃 */
-
+    /* 로그아웃 */
     .signout_modal.logOut_Modal {
         width: 95%;
         border-radius: 12px;

@@ -15,7 +15,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 const App = () => {
   const { currentUser } = useContext(ResisterContext);
 
-  // 사용자 인증 완료시 홈페이지 보이기
   const ProtectRoute = ({ children }) => {
     if (!currentUser) {
       return <Navigate to="/login" />;
@@ -27,21 +26,20 @@ const App = () => {
   return (
     <>
       <Router basename="react-chat">
-          <Routes>
-            {/* Route 6버전 부터 index기능 가능 */}
-            <Route path="/">
-              <Route
-                index
-                element={
-                  <ProtectRoute>
-                    <Home />
-                  </ProtectRoute>
-                }
-              />
-              <Route path="login" element={<Login />} />
-              <Route path="resister" element={<Signup />} />
-            </Route>
-          </Routes>
+        <Routes>
+          <Route path="/">
+            <Route
+              index
+              element={
+                <ProtectRoute>
+                  <Home />
+                </ProtectRoute>
+              }
+            />
+            <Route path="login" element={<Login />} />
+            <Route path="register" element={<Signup />} />
+          </Route>
+        </Routes>
       </Router>
     </>
   );
