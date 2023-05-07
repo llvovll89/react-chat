@@ -1,10 +1,6 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
 import { RiBarChartBoxLine } from 'react-icons/ri';
 import { AiOutlineFileAdd } from 'react-icons/ai';
-import { useContext } from 'react';
-import { ResisterContext } from '../../context/ResisterContext';
-import { ChatContext } from '../../context/ChatContext';
-import { useState } from 'react';
 import {
   arrayUnion,
   doc,
@@ -15,6 +11,8 @@ import {
 import { v4 as uuid } from 'uuid';
 import { db, storage } from '../../firebase';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
+import { ResisterContext } from '../../context/ResisterContext';
+import { ChatContext } from '../../context/ChatContext';
 import { useWrapContext } from '../../context/WrapContext';
 
 const ChatInput = () => {
@@ -93,39 +91,37 @@ const ChatInput = () => {
           color: dark ? '#fff' : '#181818',
         }}
       >
-        <input
-          type="text"
-          placeholder="입력해주세요.."
-          value={text}
-          className="chat_input"
-          onChange={(e) => setText(e.target.value)}
-          style={{ color: dark ? '#fff' : '#181818' }}
-        />
-        <div className="submit">
-          <div className="submit_left">
-            <span>
-              <RiBarChartBoxLine />
-            </span>
-            <input
-              type="file"
-              id="file"
-              style={{ display: 'none' }}
-              onChange={(e) => setImg(e.target.files[0])}
-            />
-            <label htmlFor="file">
-              <span>
-                <AiOutlineFileAdd />
-              </span>
-            </label>
-          </div>
-          <button
-            type="submit"
+        <form className="chat_form" onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="입력해주세요.."
+            value={text}
+            className="chat_input"
+            onChange={(e) => setText(e.target.value)}
             style={{ color: dark ? '#fff' : '#181818' }}
-            onClick={handleSubmit}
-          >
-            SEND
-          </button>
-        </div>
+          />
+          <div className="submit">
+            <div className="submit_left">
+              <span>
+                <RiBarChartBoxLine />
+              </span>
+              <input
+                type="file"
+                id="file"
+                style={{ display: 'none' }}
+                onChange={(e) => setImg(e.target.files[0])}
+              />
+              <label htmlFor="file">
+                <span>
+                  <AiOutlineFileAdd />
+                </span>
+              </label>
+            </div>
+            <button type="submit" style={{ color: dark ? '#fff' : '#181818' }}>
+              SEND
+            </button>
+          </div>
+        </form>
       </div>
     </>
   );

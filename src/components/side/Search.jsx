@@ -41,7 +41,7 @@ const Search = () => {
                     [uID + ".userInfo"] : {
                         uid: user.uid,
                         displayName: user.displayName,
-                        photoURL: user.photoURL,
+                        photoURL: user.photoURL,    
                     },
                     [uID + ".date"]: serverTimestamp(),
                 })
